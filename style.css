@@ -60,7 +60,7 @@ img {
 }
 
 .section {
-  padding: 96px 0;
+  padding: 56px 0;
 }
 
 .section-label {
@@ -76,7 +76,7 @@ img {
 .section-heading {
   font-size: 2.25rem;
   color: var(--teal);
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 /* --- Navigation --- */
@@ -169,7 +169,7 @@ img {
 
 /* --- Hero --- */
 .hero {
-  min-height: 100vh;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   background: var(--teal);
@@ -228,7 +228,7 @@ img {
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 64px;
+  gap: 40px;
   align-items: start;
 }
 
@@ -277,7 +277,7 @@ img {
 
 .service-card {
   background: var(--white);
-  padding: 40px 32px;
+  padding: 28px 24px;
   border-top: 3px solid var(--gold);
 }
 
@@ -350,7 +350,7 @@ img {
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 64px;
+  gap: 40px;
   align-items: start;
 }
 
@@ -445,7 +445,7 @@ img {
 .footer {
   background: var(--teal);
   color: rgba(255, 255, 255, 0.6);
-  padding: 48px 0;
+  padding: 32px 0;
   text-align: center;
 }
 
@@ -495,7 +495,7 @@ img {
 
 @media (max-width: 768px) {
   .section {
-    padding: 64px 0;
+    padding: 40px 0;
   }
 
   .section-heading {
