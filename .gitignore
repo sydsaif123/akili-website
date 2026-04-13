@@ -10,3 +10,6 @@ __pycache__/
 *.log
 coverage/
 .DS_Store
+Thumbs.db
+Desktop.ini
+config.js
