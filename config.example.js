@@ -2,10 +2,5 @@
 // config.js is gitignored so secrets stay out of version control
 var CONFIG = {
   // The email address displayed on the contact section
-  contact_email: "contactus@akiliag.com",
-
-  // Formspree form endpoint for the contact form
-  // Sign up at formspree.io, create a form with contactus@akiliag.com as the recipient, paste the endpoint here
-  // It will look like: "https://formspree.io/f/xaBcDeFg"
-  formspree_endpoint: "https://formspree.io/f/mvzlvvyk"
+  contact_email: "contactus@akiliag.com"
 };

@@ -417,32 +417,6 @@ img {
   min-height: 100px;
 }
 
-.form-message {
-  padding: 14px;
-  margin-top: 12px;
-  font-size: 0.875rem;
-  display: none;
-}
-
-.form-message.success {
-  display: block;
-  background: #EBF5EB;
-  color: #1A5E1A;
-  border: 1px solid #A3D9A3;
-}
-
-.form-message.error {
-  display: block;
-  background: #FDECEC;
-  color: #8B1A1A;
-  border: 1px solid #F5A3A3;
-}
-
-.form-message a {
-  color: var(--gold);
-  text-decoration: underline;
-}
-
 .honeypot {
   position: absolute;
   left: -9999px;
