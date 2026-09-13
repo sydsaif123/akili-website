@@ -12,3 +12,7 @@ coverage/
 .DS_Store
 Thumbs.db
 Desktop.ini
+
+# Brand templates / Office files — keep out of the public site
+*.pptx
+~$*
