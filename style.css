@@ -558,3 +558,42 @@ img {
     grid-template-columns: 1fr;
   }
 }
+
+/* --- Preloader --- */
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  transition: background-color 0.6s ease, opacity 0.4s ease;
+}
+
+#preloader.done {
+  background: transparent;
+  pointer-events: none;
+}
+
+#preloader-logo {
+  width: 92px;
+  height: auto;
+  transform-origin: center center;
+  animation: preloader-pulse 1s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes preloader-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+
+/* Hide the real nav logo mark until the flying logo lands */
+body.preloading .nav-logo img {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #preloader-logo { animation: none; }
+}
