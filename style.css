@@ -99,6 +99,13 @@ img {
 
 .nav-logo {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo-text {
+  display: flex;
   flex-direction: column;
   line-height: 1.1;
 }
@@ -434,6 +441,9 @@ img {
 }
 
 .footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin-bottom: 12px;
 }
 
