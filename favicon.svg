@@ -1,5 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 50" role="img" aria-label="Akili Advisory Group">
-  <rect x="0" y="0" width="52" height="50" rx="8" fill="#FFFFFF"/>
-  <path d="M5,20 L17,20 L24,32 L17,44 L5,44 L12,32 Z" fill="#969292" stroke="#969292" stroke-width="1.6" stroke-linejoin="round"/>
-  <path d="M20,16 L26,6 L28,6 L48,44 L36,44 L20,18 Z" fill="#FF4413" stroke="#FF4413" stroke-width="1.6" stroke-linejoin="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" role="img" aria-label="Akili Advisory Group">
+  <rect x="0" y="0" width="52" height="52" rx="9" fill="#FFFFFF"/>
+  <g transform="translate(0,1)">
+    <path d="M5,20 L17,20 L24,32 L17,44 L5,44 L12,32 Z" fill="#969292" stroke="#969292" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M20,16 L26,6 L28,6 L48,44 L36,44 L20,18 Z" fill="#FF4413" stroke="#FF4413" stroke-width="1.6" stroke-linejoin="round"/>
+  </g>
 </svg>
