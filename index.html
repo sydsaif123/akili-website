@@ -5,13 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Akili Advisory Group — Independent Technology Advisory for Africa</title>
   <meta name="description" content="Africa-focused independent technology advisory firm serving boards and C-suites. We help organisations navigate complex technology decisions free from vendor bias.">
-  <link rel="icon" href="favicon.ico?v=2" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
-  <link rel="stylesheet" href="./style.css?v=2">
+  <link rel="icon" href="favicon.ico?v=3" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=3">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=3">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=3">
+  <link rel="stylesheet" href="./style.css?v=10">
 </head>
 <body class="preloading">
+
+  <div id="scroll-progress" aria-hidden="true"></div>
 
   <!-- Preloader -->
   <div id="preloader" aria-hidden="true">
@@ -45,22 +47,23 @@
   <!-- Hero -->
   <section class="hero" id="hero">
     <div class="container hero-content">
-      <h1>When technology decisions get complex, we bring clarity.</h1>
-      <p class="hero-sub">Independent advisory for boards and leadership teams navigating digital transformation, governance, and execution — without vendor bias.</p>
-      <a href="#contact" class="btn">Start a Conversation</a>
+      <p class="hero-eyebrow" data-reveal>Independent Technology Advisory</p>
+      <h1 data-reveal style="--reveal-delay:90ms">When technology decisions get complex, <em>we bring clarity.</em></h1>
+      <p class="hero-sub" data-reveal style="--reveal-delay:180ms">Independent advisory for boards and leadership teams navigating digital transformation, governance, and execution — without vendor bias.</p>
+      <a href="#contact" class="btn btn-light" data-reveal style="--reveal-delay:270ms"><span>Start a conversation</span></a>
     </div>
   </section>
 
   <!-- About -->
   <section class="section" id="about">
     <div class="container">
-      <span class="section-label">About</span>
-      <h2 class="section-heading">Who We Are</h2>
+      <span class="section-label" data-reveal>About</span>
+      <h2 class="section-heading" data-reveal style="--reveal-delay:70ms">Who We Are</h2>
       <div class="about-grid">
-        <div class="about-text">
+        <div class="about-text" data-reveal style="--reveal-delay:0ms">
           <p>We work with organisations at critical moments — when decisions carry weight, transformations stall, or clarity is missing. Our role is simple: to help you see clearly, decide confidently, and ensure what's planned actually works in practice.</p>
         </div>
-        <div class="about-cards">
+        <div class="about-cards" data-reveal style="--reveal-delay:120ms">
           <div class="about-card">
             <h4>20+ Years Combined Experience</h4>
             <p>Deep expertise across banking, insurance, energy, and public sector technology.</p>
@@ -81,18 +84,21 @@
   <!-- Services -->
   <section class="section services" id="services">
     <div class="container">
-      <span class="section-label">What We Do</span>
-      <h2 class="section-heading">Services</h2>
+      <span class="section-label" data-reveal>What We Do</span>
+      <h2 class="section-heading" data-reveal style="--reveal-delay:70ms">Services</h2>
       <div class="services-grid">
-        <div class="service-card">
+        <div class="service-card" data-reveal style="--reveal-delay:0ms">
+          <span class="service-index">01</span>
           <h3>Advisory</h3>
           <p>Independent guidance for boards and executives navigating technology, governance, and transformation decisions.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-reveal style="--reveal-delay:110ms">
+          <span class="service-index">02</span>
           <h3>Strategy</h3>
           <p>Clear roadmaps grounded in your reality — from where you are to where you need to be.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-reveal style="--reveal-delay:220ms">
+          <span class="service-index">03</span>
           <h3>Implementation</h3>
           <p>We stay close to ensure what was promised is delivered — and that it works.</p>
         </div>
@@ -103,22 +109,22 @@
   <!-- Why Us -->
   <section class="section" id="why-us">
     <div class="container">
-      <span class="section-label">Why Akili</span>
-      <h2 class="section-heading">Why Us</h2>
+      <span class="section-label" data-reveal>Why Akili</span>
+      <h2 class="section-heading" data-reveal style="--reveal-delay:70ms">Why Us</h2>
       <div class="why-grid">
-        <div class="why-card">
+        <div class="why-card" data-reveal style="--reveal-delay:0ms">
           <h3>Independent by Design</h3>
           <p>We do not sell technology. We protect your decisions from it. No vendor bias. No hidden incentives. Just clear, accountable advice.</p>
         </div>
-        <div class="why-card">
+        <div class="why-card" data-reveal style="--reveal-delay:90ms">
           <h3>Built for Leadership Decisions</h3>
           <p>We turn complexity into clarity at board level — so decisions are understood, owned, and acted on.</p>
         </div>
-        <div class="why-card">
+        <div class="why-card" data-reveal style="--reveal-delay:180ms">
           <h3>From Strategy to Reality</h3>
           <p>We do not stop at recommendations. We stay close until decisions translate into working solutions.</p>
         </div>
-        <div class="why-card">
+        <div class="why-card" data-reveal style="--reveal-delay:270ms">
           <h3>Africa, with Depth</h3>
           <p>We understand the realities of operating across African markets — beyond theory, into execution.</p>
         </div>
@@ -129,14 +135,14 @@
   <!-- Partners -->
   <section class="section partners" id="partners">
     <div class="container">
-      <span class="section-label">Partnerships</span>
-      <h2 class="section-heading">Trusted Partnerships</h2>
+      <span class="section-label" data-reveal>Partnerships</span>
+      <h2 class="section-heading" data-reveal style="--reveal-delay:70ms">Trusted Partnerships</h2>
       <div class="partners-grid">
-        <div class="partner-card">
+        <div class="partner-card" data-reveal style="--reveal-delay:0ms">
           <h3>Newgen</h3>
           <p>Official Africa implementation partner for the NewgenONE platform — serving banking, insurance, government, and lending sectors with enterprise content management and process automation.</p>
         </div>
-        <div class="partner-card">
+        <div class="partner-card" data-reveal style="--reveal-delay:130ms">
           <h3>Cave Digital</h3>
           <p>Advisory partner for board and committee decision support. Together, we deliver governance-grade technology guidance to leadership teams across the continent.</p>
         </div>
@@ -147,14 +153,14 @@
   <!-- Contact -->
   <section class="section" id="contact">
     <div class="container">
-      <span class="section-label">Get in Touch</span>
-      <h2 class="section-heading">Contact</h2>
+      <span class="section-label" data-reveal>Get in Touch</span>
+      <h2 class="section-heading" data-reveal style="--reveal-delay:70ms">Contact</h2>
       <div class="contact-grid">
-        <div class="contact-text">
+        <div class="contact-text" data-reveal>
           <p>If your transformation is losing momentum, your board needs clarity, or your technology decisions feel too complex to navigate — let us talk.</p>
           <p class="contact-email">Email: <a href="#" data-email></a></p>
         </div>
-        <div class="contact-form-wrap">
+        <div class="contact-form-wrap" data-reveal style="--reveal-delay:120ms">
           <form id="contact-form" action="https://formspree.io/f/mvzlvvyk" method="POST">
             <input type="hidden" name="_next" value="https://akiliag.com">
             <div class="honeypot" aria-hidden="true">
@@ -186,7 +192,7 @@
               <label for="message">Message</label>
               <textarea id="message" name="message" required></textarea>
             </div>
-            <button type="submit" class="btn btn-solid">Send Message</button>
+            <button type="submit" class="btn btn-solid"><span>Send message</span></button>
           </form>
         </div>
       </div>
@@ -203,6 +209,7 @@
           <span class="nav-logo-sub">Advisory Group</span>
         </span>
       </div>
+      <div class="footer-rule" aria-hidden="true"><span class="footer-mark"></span></div>
       <p class="footer-values">Clarity &middot; Impact &middot; Trust</p>
       <p class="footer-copy">&copy; 2025 Akili Advisory Group. All rights reserved.</p>
     </div>
@@ -215,6 +222,6 @@
     };
   </script>
   <script src="./config.js"></script>
-  <script src="./main.js?v=2"></script>
+  <script src="./main.js?v=4"></script>
 </body>
 </html>

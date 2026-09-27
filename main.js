@@ -97,4 +97,68 @@
     }
   });
 
+  // --- Scroll progress hairline + condensed nav ---
+  (function () {
+    var bar = document.getElementById("scroll-progress");
+    var nav = document.querySelector(".nav");
+    if (!bar && !nav) return;
+
+    var ticking = false;
+
+    function update() {
+      ticking = false;
+      var doc = document.documentElement;
+      var max = (doc.scrollHeight - window.innerHeight) || 1;
+      var y = window.pageYOffset || doc.scrollTop || 0;
+
+      if (bar) {
+        var pct = Math.min(1, Math.max(0, y / max));
+        bar.style.transform = "scaleX(" + pct + ")";
+      }
+      if (nav) {
+        nav.classList.toggle("condensed", y > 24);
+      }
+    }
+
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(update);
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    update();
+  })();
+
+  // --- Scroll reveal ---
+  // Content is visible by default. The hidden state is only armed once we
+  // know we can un-hide it, so a JS or observer failure never blanks the page.
+  (function () {
+    var items = document.querySelectorAll("[data-reveal]");
+    if (!items.length) return;
+
+    var reduce = window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (reduce || !("IntersectionObserver" in window)) return;
+
+    document.body.classList.add("js-reveal");
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("revealed");
+        io.unobserve(entry.target);
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+
+    items.forEach(function (el) { io.observe(el); });
+
+    // Safety: never leave anything hidden.
+    setTimeout(function () {
+      items.forEach(function (el) { el.classList.add("revealed"); });
+    }, 4000);
+  })();
+
 })();
