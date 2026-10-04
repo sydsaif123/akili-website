@@ -48,6 +48,14 @@
 
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
   --nav-h: 76px;
+  /* type scale: 11 / 14 / 16 / 20 / 24 / 38 / 52 */
+  --t-eyebrow: 0.6875rem;
+  --t-small: 0.875rem;
+  --t-body: 1rem;
+  --t-sub: 1.25rem;
+  --t-lead: 1.5rem;
+  --t-heading: clamp(1.75rem, 3.2vw, 2.4rem);
+
   --r-card: 14px;
   --r-pill: 9999px;
 
@@ -153,7 +161,7 @@ img {
 }
 
 .section-heading {
-  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-size: var(--t-heading);
   color: var(--teal);
   margin-bottom: 32px;
   letter-spacing: -0.012em;
@@ -478,9 +486,9 @@ img {
 }
 
 .about-lead p {
-  font-size: 1.125rem;
+  font-size: var(--t-body);
   color: var(--stone);
-  line-height: 1.75;
+  line-height: 1.8;
 }
 
 /* --- Slides (auto-rotating, no library) --- */
@@ -682,17 +690,17 @@ body.js-slides .slides.is-paused .slide-bar::after {
 
 .slide-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  font-size: var(--t-sub);
   font-weight: 400;
-  line-height: 1.25;
+  line-height: 1.3;
   color: var(--teal);
   letter-spacing: -0.005em;
 }
 
 .proof-strip .slide-copy p {
-  font-size: 0.875rem;
+  font-size: var(--t-body);
   color: var(--stone);
-  line-height: 1.6;
+  line-height: 1.65;
   max-width: 58ch;
 }
 
@@ -700,33 +708,6 @@ body.js-slides .slides.is-paused .slide-bar::after {
   margin-top: 26px;
   gap: 20px;
   max-width: 680px;
-}
-
-/* --- Pull quote (About) --- */
-.pullquote {
-  max-width: 24ch;
-  border-top: 1px solid var(--champagne);
-  padding-top: 26px;
-}
-
-.pullquote p {
-  font-family: var(--font-heading);
-  font-size: clamp(1.9rem, 4.4vw, 3rem);
-  line-height: 1.12;
-  letter-spacing: -0.02em;
-  color: var(--teal);
-}
-
-.pullquote cite {
-  display: block;
-  margin-top: 16px;
-  font-family: var(--font-body);
-  font-style: normal;
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--bronze);
 }
 
 /* --- Services --- */
@@ -785,13 +766,13 @@ body.js-slides .slides.is-paused .slide-bar::after {
 }
 
 .service-card h3 {
-  font-size: 1.375rem;
+  font-size: var(--t-sub);
   color: var(--teal);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .service-card p {
-  font-size: 0.875rem;
+  font-size: var(--t-body);
   color: var(--stone);
   line-height: 1.75;
 }
@@ -814,13 +795,13 @@ body.js-slides .slides.is-paused .slide-bar::after {
 }
 
 .why-card h3 {
-  font-size: 1.1875rem;
+  font-size: var(--t-sub);
   color: var(--teal);
   margin-bottom: 8px;
 }
 
 .why-card p {
-  font-size: 0.875rem;
+  font-size: var(--t-body);
   color: var(--stone);
   line-height: 1.75;
 }
@@ -876,15 +857,15 @@ body.js-slides .slides.is-paused .slide-bar::after {
 }
 
 .partner-card h3 {
-  font-size: 1.375rem;
+  font-size: var(--t-sub);
   color: var(--white);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .partner-card p {
-  font-size: 0.875rem;
+  font-size: var(--t-body);
   color: rgba(255, 255, 255, 0.62);
-  line-height: 1.8;
+  line-height: 1.75;
 }
 
 /* --- Contact --- */
@@ -897,18 +878,18 @@ body.js-slides .slides.is-paused .slide-bar::after {
 
 .contact-text p.contact-lead {
   font-family: var(--font-heading);
-  font-size: clamp(1.35rem, 2.6vw, 1.75rem);
-  line-height: 1.25;
+  font-size: var(--t-lead);
+  line-height: 1.3;
   color: var(--teal);
   letter-spacing: -0.015em;
   margin-bottom: 20px;
 }
 
 .contact-text p {
-  font-size: 1.0625rem;
+  font-size: var(--t-body);
   color: var(--stone);
   line-height: 1.8;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .contact-email {
@@ -1099,10 +1080,7 @@ body.js-reveal [data-reveal].revealed {
     font-size: 1rem;
   }
 
-  .about-text p,
-  .contact-text p {
-    font-size: 1rem;
-  }
+
 
   .nav-links {
     position: fixed;

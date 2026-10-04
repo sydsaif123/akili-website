@@ -2,7 +2,7 @@
 
 ## Current status
 - Phase: Design and content refresh, on branch `design/restrained-palette`
-- Last action: Proof strip moved out of the hero into its own band below it
+- Last action: One type scale applied across every section; pull-quote removed
 - Next action: Push branch and open PR for team review
 
 ## Decisions made
@@ -18,6 +18,9 @@
 | 2026-10-04 | The three proof figures (20+, EUR 1.5bn+, 1,200+) sit in their own bone-coloured band directly BELOW the teal hero, not inside it. About carries a pull-quote instead. | Proof belongs high on the page, but the teal hero must stay compact (~494px). A tall dark block was rejected. |
 | 2026-10-04 | Preloader hidden via `<noscript>`. | Pre-existing bug: the overlay is removed by script, so with JS disabled it covered the whole site permanently. Present on live main too. |
 | 2026-10-04 | Nothing from Rwanda_Digital_Transformation_Roadmap_v8.pptx or Akili_Response_to_Irembo1.9.pptx appears on the site. | Client-confidential. The Irembo deck contains a slide marked "Not for distribution. For Akili partner review only." Used only to understand capability. |
+
+| 2026-10-04 | Single type scale in :root -- 11 / 14 / 16 / 20 / 24 / 38 / 52 px. Every section heading, card sub-head and body paragraph pulls from it. | Sizes had drifted per section: sub-heads at 22/19/22/20 and body at 18/17/14 made About read heavy and Services read small. Do not set a font-size outside these tokens. |
+| 2026-10-04 | "We stay until it works." is the closing sentence of the Who We Are paragraph, not a pull-quote. | As a 48px block quote it outsized every section heading and unbalanced the page. |
 
 ## Open questions
 - [ ] Partnerships section lists Newgen and Cave Digital. The pitch names Smart Governance as the governance platform -- is its omission from the site deliberate?
