@@ -906,6 +906,14 @@ body.js-slides .slides.is-paused .slide-bar::after {
 }
 
 /* --- Contact --- */
+/* Partnerships was the only dark band between Why Us and Contact. With it
+   hidden, those two sections were both white and ran together. Contact
+   takes the bone ground to keep the alternation. Revert this rule when
+   the Partnerships section comes back. */
+#contact.section {
+  background: var(--bone);
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;

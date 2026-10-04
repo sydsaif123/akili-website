@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=3">
   <link rel="icon" type="image/svg+xml" href="favicon.svg?v=3">
   <link rel="apple-touch-icon" href="apple-touch-icon.png?v=3">
-  <link rel="stylesheet" href="./style.css?v=22">
+  <link rel="stylesheet" href="./style.css?v=23">
   <noscript>
     <style>
       /* The preloader is torn down by script. Without JS it would cover the
@@ -142,7 +142,7 @@
       <div class="why-grid">
         <div class="why-card" data-reveal style="--reveal-delay:0ms">
           <h3>Senior People, Start to Finish</h3>
-          <p>No junior layers. No playbook factories. A founding partner is personally on your engagement from first conversation to go-live. We hold technology partnerships and say so — but there is no sales agenda behind the advice.</p>
+          <p>No junior layers. No playbook factories. A founding partner is personally on your engagement from first conversation to go-live. No sales agenda.</p>
         </div>
         <div class="why-card" data-reveal style="--reveal-delay:90ms">
           <h3>Accountable Past Go-Live</h3>
@@ -156,7 +156,10 @@
     </div>
   </section>
 
-  <!-- Partners -->
+  <!-- Partnerships: hidden until the partner list is confirmed.
+       Inside a template element so it renders nowhere and is read by nothing.
+       To restore: delete the template open and close tags below. -->
+  <template id="partnerships-pending">
   <section class="section partners" id="partners">
     <div class="container">
       <span class="section-label" data-reveal>Partnerships</span>
@@ -173,6 +176,8 @@
       </div>
     </div>
   </section>
+
+  </template>
 
   <!-- Contact -->
   <section class="section" id="contact">

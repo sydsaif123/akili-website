@@ -2,7 +2,7 @@
 
 ## Current status
 - Phase: Design and content refresh, on branch `design/restrained-palette`
-- Last action: Rotating proof moved inside the teal hero; separate band removed
+- Last action: Partnerships section parked pending confirmation of the partner list
 - Next action: Push branch and open PR for team review
 
 ## Decisions made
@@ -22,8 +22,11 @@
 | 2026-10-04 | Single type scale in :root -- 11 / 14 / 16 / 20 / 24 / 38 / 52 px. Every section heading, card sub-head and body paragraph pulls from it. | Sizes had drifted per section: sub-heads at 22/19/22/20 and body at 18/17/14 made About read heavy and Services read small. Do not set a font-size outside these tokens. |
 | 2026-10-04 | "We stay until it works." is the closing sentence of the Who We Are paragraph, not a pull-quote. | As a 48px block quote it outsized every section heading and unbalanced the page. |
 
+| 2026-10-04 | Partnerships (Newgen, Cave Digital) is parked inside <template id="partnerships-pending">. Not deleted. | Partner list is not confirmed. Restore by deleting the template open and close tags. Note: it cannot be HTML-commented because the block contains --reveal-delay custom properties, and -- breaks an HTML comment. |
+| 2026-10-04 | Contact takes the bone ground via #contact.section while Partnerships is hidden. | Partnerships was the only dark band between Why Us and Contact; without it those two sections were both white and ran together. Revert this rule when Partnerships returns. |
+
 ## Open questions
-- [ ] Partnerships section lists Newgen and Cave Digital. The pitch names Smart Governance as the governance platform -- is its omission from the site deliberate?
+- [ ] Which partners are confirmed? The parked section holds Newgen and Cave Digital; the pitch also names Smart Governance as the governance platform.
 - [ ] Georgia serif vs a geometric sans for headings. Identity decision, left to the team.
 
 ## Session log
