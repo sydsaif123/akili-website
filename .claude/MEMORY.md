@@ -2,7 +2,7 @@
 
 ## Current status
 - Phase: Design and content refresh, on branch `design/restrained-palette`
-- Last action: Proof stats moved into the hero as an auto-rotating strip
+- Last action: Proof strip moved out of the hero into its own band below it
 - Next action: Push branch and open PR for team review
 
 ## Decisions made
@@ -15,7 +15,7 @@
 | 2026-10-04 | Buttons are pills in sentence case; cards carry a 14px radius. Georgia serif retained. | Borrowed from revolut.com. The serif is the "advisory firm not startup" signal -- switching to geometric sans is a separate identity decision, not taken. |
 | 2026-10-04 | "Vendor independent / we do not sell technology" removed site-wide. Replaced with "No Sales Agenda": partnerships held and disclosed, but no vendor pushing. | The old claim directly contradicted being the official Africa implementation partner for NewgenONE. |
 | 2026-10-04 | Maturity journey (Gen 1-4), governance practice (Hierarchies/Committees/Conglomerates) and the four founding-partner bios stay OFF the website. | Reserved as pitch material. The site earns the meeting; the deck delivers the substance. Putting everything online leaves nothing to present. |
-| 2026-10-04 | The three proof figures (20+, EUR 1.5bn+, 1,200+) live in the hero, above the fold, as an auto-rotating strip. About carries a pull-quote instead. | Proof belongs where it is seen first. The About two-column void is gone for good because the layout that caused it is gone. |
+| 2026-10-04 | The three proof figures (20+, EUR 1.5bn+, 1,200+) sit in their own bone-coloured band directly BELOW the teal hero, not inside it. About carries a pull-quote instead. | Proof belongs high on the page, but the teal hero must stay compact (~494px). A tall dark block was rejected. |
 | 2026-10-04 | Preloader hidden via `<noscript>`. | Pre-existing bug: the overlay is removed by script, so with JS disabled it covered the whole site permanently. Present on live main too. |
 | 2026-10-04 | Nothing from Rwanda_Digital_Transformation_Roadmap_v8.pptx or Akili_Response_to_Irembo1.9.pptx appears on the site. | Client-confidential. The Irembo deck contains a slide marked "Not for distribution. For Akili partner review only." Used only to understand capability. |
 
