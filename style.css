@@ -472,70 +472,173 @@ img {
 }
 
 /* --- About --- */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: start;
+.about-lead {
+  max-width: 64ch;
+  margin-bottom: 44px;
 }
 
-.about-text p {
-  font-size: 1rem;
+.about-lead p {
+  font-size: 1.125rem;
   color: var(--stone);
   line-height: 1.75;
-  margin-bottom: 14px;
 }
 
+/* --- Slides (auto-rotating, no library) --- */
+/* Without JS every slide is visible and stacked, so the content never
+   depends on the script running. */
+.slides {
+  position: relative;
+  background: var(--bone);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  padding: 40px 44px 32px;
+}
 
-.about-cards {
+.slides-viewport {
+  display: grid;
+  gap: 28px;
+}
+
+.slide {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  max-width: 62ch;
 }
 
-.about-card {
+.slide-index {
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--bronze);
+  font-variant-numeric: tabular-nums;
+}
+
+.slide p.slide-stat {
+  font-family: var(--font-heading);
+  font-size: clamp(2.8rem, 6vw, 4.25rem);
+  line-height: 1;
+  color: var(--teal);
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 2px;
+}
+
+.slide-stat-unit {
+  font-size: 0.42em;
+  letter-spacing: 0;
+  padding-left: 0.06em;
+}
+
+.slide-stat-plus {
+  font-size: 0.42em;
+  color: var(--bronze);
+  vertical-align: super;
+  padding-left: 0.04em;
+}
+
+.slide h3 {
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  color: var(--teal);
+  letter-spacing: -0.005em;
+}
+
+.slide p {
+  font-size: 1rem;
+  color: var(--stone);
+  line-height: 1.7;
+}
+
+/* progress rail: one segment per slide, the active one fills over the dwell */
+.slides-nav {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.slide-dot {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+}
+
+.slide-bar {
   position: relative;
-  padding: 22px 24px;
-  background: var(--bone);
-  border-radius: var(--r-card);
-  transition: background 0.4s var(--ease), transform 0.4s var(--ease);
+  display: block;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--line);
+  overflow: hidden;
 }
 
-.about-card::before {
+.slide-bar::after {
   content: "";
   position: absolute;
-  left: 0;
-  top: 22px;
-  width: 3px;
-  height: 18px;
-  border-radius: 0 3px 3px 0;
-  background: var(--champagne);
-  transition: background 0.4s var(--ease), height 0.4s var(--ease);
-}
-
-.about-card:hover {
-  background: #F2EEEB;
-  transform: translateX(3px);
-}
-
-.about-card:hover::before {
+  inset: 0;
   background: var(--bronze);
-  height: 28px;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
 }
 
-.about-card h4 {
-  font-family: var(--font-body);
-  font-size: 0.875rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  color: var(--teal);
-  margin-bottom: 4px;
-}
-
-.about-card p {
-  font-size: 0.8125rem;
+.slide-tag {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   color: var(--stone);
-  line-height: 1.6;
+  transition: color 0.3s var(--ease);
+}
+
+.slide-dot[aria-current="true"] .slide-tag {
+  color: var(--teal);
+}
+
+.slide-dot:hover .slide-tag {
+  color: var(--bronze);
+}
+
+/* --- Slides: JS-driven state --- */
+body.js-slides .slides-viewport {
+  gap: 0;
+}
+
+body.js-slides .slide {
+  grid-area: 1 / 1;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+}
+
+body.js-slides .slide.is-active {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+/* a finished slide keeps its bar full; the live one animates across */
+body.js-slides .slide-dot.is-done .slide-bar::after {
+  transform: scaleX(1);
+}
+
+body.js-slides .slide-dot[aria-current="true"] .slide-bar::after {
+  animation: slide-fill var(--dwell, 6000ms) linear forwards;
+}
+
+body.js-slides .slides.is-paused .slide-bar::after {
+  animation-play-state: paused;
+}
+
+@keyframes slide-fill {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
 }
 
 /* --- Services --- */
@@ -704,6 +807,15 @@ img {
   align-items: start;
 }
 
+.contact-text p.contact-lead {
+  font-family: var(--font-heading);
+  font-size: clamp(1.35rem, 2.6vw, 1.75rem);
+  line-height: 1.25;
+  color: var(--teal);
+  letter-spacing: -0.015em;
+  margin-bottom: 20px;
+}
+
 .contact-text p {
   font-size: 1.0625rem;
   color: var(--stone);
@@ -864,7 +976,6 @@ body.js-reveal [data-reveal].revealed {
     grid-template-columns: 1fr;
   }
 
-  .about-grid,
   .contact-grid,
   .partners-grid {
     grid-template-columns: 1fr;
@@ -996,4 +1107,14 @@ body.preloading .nav-logo img {
   .nav::after {
     transition: none;
   }
+
+  body.js-slides .slides-viewport { gap: 28px; }
+  body.js-slides .slide {
+    grid-area: auto;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    transition: none;
+  }
+  body.js-slides .slide-bar::after { animation: none; transform: scaleX(1); }
 }
