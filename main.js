@@ -162,82 +162,77 @@
   })();
 
   // --- Auto-rotating slides ---
-  // The markup shows every slide stacked by default. We only switch to the
-  // one-at-a-time presentation once the script is running, so a failure here
-  // leaves the content readable rather than hidden.
+  // Drives every [data-slides] container. The markup shows all slides stacked
+  // by default; we only switch to the one-at-a-time presentation once the
+  // script is running, so a failure here leaves the content readable.
   (function () {
-    var root = document.getElementById("about-slides");
-    if (!root) return;
+    var roots = [].slice.call(document.querySelectorAll("[data-slides]"));
+    if (!roots.length) return;
 
-    var slides = [].slice.call(root.querySelectorAll(".slide"));
-    var dots = [].slice.call(root.querySelectorAll(".slide-dot"));
-    if (slides.length < 2 || dots.length !== slides.length) return;
-
-    var DWELL = 6000;
     var reduce = window.matchMedia &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     document.body.classList.add("js-slides");
-    root.style.setProperty("--dwell", DWELL + "ms");
 
-    var current = 0;
-    var timer = null;
+    roots.forEach(function (root) {
+      var slides = [].slice.call(root.querySelectorAll(".slide"));
+      var dots = [].slice.call(root.querySelectorAll(".slide-dot"));
+      if (slides.length < 2 || dots.length !== slides.length) return;
 
-    function render(next) {
-      current = (next + slides.length) % slides.length;
-      slides.forEach(function (el, i) {
-        el.classList.toggle("is-active", i === current);
-        el.setAttribute("aria-hidden", i === current ? "false" : "true");
-      });
+      var dwell = parseInt(root.getAttribute("data-dwell"), 10) || 6000;
+      root.style.setProperty("--dwell", dwell + "ms");
+
+      var current = 0;
+      var timer = null;
+
+      function render(next) {
+        current = (next + slides.length) % slides.length;
+        slides.forEach(function (el, i) {
+          el.classList.toggle("is-active", i === current);
+          el.setAttribute("aria-hidden", i === current ? "false" : "true");
+        });
+        dots.forEach(function (d, i) {
+          d.setAttribute("aria-current", i === current ? "true" : "false");
+          d.classList.toggle("is-done", i < current);
+          if (i === current) {
+            var bar = d.querySelector(".slide-bar");
+            if (bar) { bar.style.animation = "none"; bar.offsetHeight; bar.style.animation = ""; }
+          }
+        });
+      }
+
+      function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+      function start() {
+        if (reduce) return;
+        stop();
+        timer = setInterval(function () { render(current + 1); }, dwell);
+      }
+
+      function goTo(i) { render(i); start(); }
+
       dots.forEach(function (d, i) {
-        d.setAttribute("aria-current", i === current ? "true" : "false");
-        d.classList.toggle("is-done", i < current);
-        // restart the fill animation on the live segment
-        if (i === current) {
-          var bar = d.querySelector(".slide-bar");
-          if (bar) { bar.style.animation = "none"; bar.offsetHeight; bar.style.animation = ""; }
-        }
+        d.addEventListener("click", function () { goTo(i); });
+        d.addEventListener("keydown", function (e) {
+          if (e.key === "ArrowRight") { e.preventDefault(); goTo(current + 1); dots[current].focus(); }
+          if (e.key === "ArrowLeft")  { e.preventDefault(); goTo(current - 1); dots[current].focus(); }
+        });
       });
-    }
 
-    function stop() {
-      if (timer) { clearInterval(timer); timer = null; }
-    }
+      function pause() { root.classList.add("is-paused"); stop(); }
+      function resume() { root.classList.remove("is-paused"); start(); }
+      root.addEventListener("mouseenter", pause);
+      root.addEventListener("mouseleave", resume);
+      root.addEventListener("focusin", pause);
+      root.addEventListener("focusout", resume);
 
-    function start() {
-      if (reduce) return;
-      stop();
-      timer = setInterval(function () { render(current + 1); }, DWELL);
-    }
+      document.addEventListener("visibilitychange", function () {
+        if (document.hidden) { stop(); } else { start(); }
+      });
 
-    function goTo(i) {
-      render(i);
+      render(0);
       start();
-    }
-
-    dots.forEach(function (d, i) {
-      d.addEventListener("click", function () { goTo(i); });
-      d.addEventListener("keydown", function (e) {
-        if (e.key === "ArrowRight") { e.preventDefault(); goTo(current + 1); dots[(current) % dots.length].focus(); }
-        if (e.key === "ArrowLeft")  { e.preventDefault(); goTo(current - 1); dots[(current) % dots.length].focus(); }
-      });
     });
-
-    // pause while the reader is on it
-    function pause() { root.classList.add("is-paused"); stop(); }
-    function resume() { root.classList.remove("is-paused"); start(); }
-    root.addEventListener("mouseenter", pause);
-    root.addEventListener("mouseleave", resume);
-    root.addEventListener("focusin", pause);
-    root.addEventListener("focusout", resume);
-
-    // and while the tab is in the background
-    document.addEventListener("visibilitychange", function () {
-      if (document.hidden) { stop(); } else { start(); }
-    });
-
-    render(0);
-    start();
   })();
 
 })();

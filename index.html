@@ -9,7 +9,15 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=3">
   <link rel="icon" type="image/svg+xml" href="favicon.svg?v=3">
   <link rel="apple-touch-icon" href="apple-touch-icon.png?v=3">
-  <link rel="stylesheet" href="./style.css?v=13">
+  <link rel="stylesheet" href="./style.css?v=15">
+  <noscript>
+    <style>
+      /* The preloader is torn down by script. Without JS it would cover the
+         site permanently, so hide it and un-hide what it masks. */
+      #preloader { display: none; }
+      body.preloading .nav-logo img { opacity: 1; }
+    </style>
+  </noscript>
 </head>
 <body class="preloading">
 
@@ -51,6 +59,40 @@
       <h1 data-reveal style="--reveal-delay:90ms">When technology decisions get complex, <em>we bring clarity.</em></h1>
       <p class="hero-sub" data-reveal style="--reveal-delay:180ms">We stay responsible for outcomes, not just deliverables — through go-live and beyond.</p>
       <a href="#contact" class="btn btn-light" data-reveal style="--reveal-delay:270ms"><span>Start a conversation</span></a>
+
+      <div class="slides hero-proof" data-slides data-dwell="6000" data-reveal style="--reveal-delay:380ms">
+        <div class="slides-viewport">
+          <article class="slide is-active" id="hs-1" role="group" aria-roledescription="slide" aria-label="1 of 3">
+            <p class="slide-stat">20<span class="slide-stat-plus">+</span></p>
+            <div class="slide-copy">
+              <h2 class="slide-title">Years of senior leadership</h2>
+              <p>Not years in the industry — years at the level where the decision actually gets made.</p>
+            </div>
+          </article>
+          <article class="slide" id="hs-2" role="group" aria-roledescription="slide" aria-label="2 of 3">
+            <p class="slide-stat">&euro;1.5<span class="slide-stat-unit">bn</span><span class="slide-stat-plus">+</span></p>
+            <div class="slide-copy">
+              <h2 class="slide-title">In capitalised software assets stewarded</h2>
+              <p>Portfolios this size are where good intentions meet real constraints. We have carried that weight, not advised from beside it.</p>
+            </div>
+          </article>
+          <article class="slide" id="hs-3" role="group" aria-roledescription="slide" aria-label="3 of 3">
+            <p class="slide-stat">1,200<span class="slide-stat-plus">+</span></p>
+            <div class="slide-copy">
+              <h2 class="slide-title">Enterprise templates built and deployed</h2>
+              <p>Delivery measured in what shipped and stayed running, across core processes in regulated industries.</p>
+            </div>
+          </article>
+        </div>
+        <div class="slides-nav">
+          <button type="button" class="slide-dot" data-go="0" aria-controls="hs-1" aria-current="true">
+            <span class="slide-bar"></span><span class="slide-tag">Leadership</span></button>
+          <button type="button" class="slide-dot" data-go="1" aria-controls="hs-2" aria-current="false">
+            <span class="slide-bar"></span><span class="slide-tag">Stewardship</span></button>
+          <button type="button" class="slide-dot" data-go="2" aria-controls="hs-3" aria-current="false">
+            <span class="slide-bar"></span><span class="slide-tag">Delivery</span></button>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -63,36 +105,10 @@
         <p>No junior layers. No template factories. A founding partner personally guides every engagement, start to finish. We partner with local networks rather than claim coverage we haven't earned — full ownership, real accountability.</p>
       </div>
 
-      <div class="slides" id="about-slides" data-reveal style="--reveal-delay:120ms">
-        <div class="slides-viewport">
-          <article class="slide is-active" id="as-1" role="group" aria-roledescription="slide" aria-label="1 of 3">
-            <span class="slide-index">01</span>
-            <p class="slide-stat">20<span class="slide-stat-plus">+</span></p>
-            <h3>Years of senior leadership</h3>
-            <p>Not years in the industry — years at the level where the decision actually gets made. Banking, insurance, energy, public sector and health.</p>
-          </article>
-          <article class="slide" id="as-2" role="group" aria-roledescription="slide" aria-label="2 of 3">
-            <span class="slide-index">02</span>
-            <p class="slide-stat">&euro;1.5<span class="slide-stat-unit">bn</span><span class="slide-stat-plus">+</span></p>
-            <h3>In capitalised software assets stewarded</h3>
-            <p>Portfolios this size are where good intentions meet real constraints. We have carried that responsibility, not advised from beside it.</p>
-          </article>
-          <article class="slide" id="as-3" role="group" aria-roledescription="slide" aria-label="3 of 3">
-            <span class="slide-index">03</span>
-            <p class="slide-stat">1,200<span class="slide-stat-plus">+</span></p>
-            <h3>Enterprise templates built and deployed</h3>
-            <p>Delivery experience measured in what shipped and stayed running, across core processes in regulated industries.</p>
-          </article>
-        </div>
-        <div class="slides-nav">
-          <button type="button" class="slide-dot" data-go="0" aria-controls="as-1" aria-current="true">
-            <span class="slide-bar"></span><span class="slide-tag">Leadership</span></button>
-          <button type="button" class="slide-dot" data-go="1" aria-controls="as-2" aria-current="false">
-            <span class="slide-bar"></span><span class="slide-tag">Stewardship</span></button>
-          <button type="button" class="slide-dot" data-go="2" aria-controls="as-3" aria-current="false">
-            <span class="slide-bar"></span><span class="slide-tag">Delivery</span></button>
-        </div>
-      </div>
+      <blockquote class="pullquote" data-reveal style="--reveal-delay:120ms">
+        <p>We stay until it works.</p>
+        <cite>Akili Advisory Group</cite>
+      </blockquote>
       </div>
     </div>
   </section>
@@ -239,6 +255,6 @@
     };
   </script>
   <script src="./config.js"></script>
-  <script src="./main.js?v=5"></script>
+  <script src="./main.js?v=6"></script>
 </body>
 </html>

@@ -316,7 +316,7 @@ img {
   align-items: center;
   background: var(--teal);
   color: var(--white);
-  padding: 80px 0 72px;
+  padding: 72px 0 64px;
   margin-top: var(--nav-h);
 }
 
@@ -639,6 +639,111 @@ body.js-slides .slides.is-paused .slide-bar::after {
 @keyframes slide-fill {
   from { transform: scaleX(0); }
   to   { transform: scaleX(1); }
+}
+
+/* --- Hero proof strip: the slider on the dark ground --- */
+.hero-proof {
+  background: transparent;
+  border: none;
+  border-top: 1px solid rgba(201, 172, 115, 0.26);
+  border-radius: 0;
+  padding: 34px 0 0;
+  margin-top: 46px;
+  max-width: 660px;
+}
+
+.hero-proof .slide {
+  flex-direction: row;
+  align-items: baseline;
+  gap: 22px;
+  max-width: none;
+}
+
+.hero-proof .slide-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hero-proof .slide p.slide-stat {
+  font-size: clamp(2.6rem, 5vw, 3.6rem);
+  color: var(--white);
+  margin-bottom: 0;
+  flex: none;
+  min-width: 4.4ch;
+}
+
+.hero-proof .slide p.slide-stat .slide-stat-plus {
+  color: var(--champagne);
+}
+
+.slide-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--white);
+  letter-spacing: -0.005em;
+}
+
+.hero-proof .slide p {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.58);
+  line-height: 1.6;
+  max-width: 48ch;
+}
+
+.hero-proof .slides-nav {
+  margin-top: 26px;
+  gap: 18px;
+}
+
+.hero-proof .slide-bar {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.hero-proof .slide-bar::after {
+  background: var(--champagne);
+}
+
+.hero-proof .slide-tag {
+  font-size: 0.625rem;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.hero-proof .slide-dot[aria-current="true"] .slide-tag {
+  color: var(--champagne);
+}
+
+.hero-proof .slide-dot:hover .slide-tag {
+  color: var(--white);
+}
+
+/* --- Pull quote (About) --- */
+.pullquote {
+  max-width: 24ch;
+  border-top: 1px solid var(--champagne);
+  padding-top: 26px;
+}
+
+.pullquote p {
+  font-family: var(--font-heading);
+  font-size: clamp(1.9rem, 4.4vw, 3rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--teal);
+}
+
+.pullquote cite {
+  display: block;
+  margin-top: 16px;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--bronze);
 }
 
 /* --- Services --- */
