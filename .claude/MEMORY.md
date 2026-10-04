@@ -2,7 +2,7 @@
 
 ## Current status
 - Phase: Design and content refresh, on branch `design/restrained-palette`
-- Last action: Partnerships section parked pending confirmation of the partner list
+- Last action: Who We Are rebuilt as three value cards (Clarity / Impact / Trust)
 - Next action: Push branch and open PR for team review
 
 ## Decisions made
@@ -24,6 +24,9 @@
 
 | 2026-10-04 | Partnerships (Newgen, Cave Digital) is parked inside <template id="partnerships-pending">. Not deleted. | Partner list is not confirmed. Restore by deleting the template open and close tags. Note: it cannot be HTML-commented because the block contains --reveal-delay custom properties, and -- breaks an HTML comment. |
 | 2026-10-04 | Contact takes the bone ground via #contact.section while Partnerships is hidden. | Partnerships was the only dark band between Why Us and Contact; without it those two sections were both white and ran together. Revert this rule when Partnerships returns. |
+
+| 2026-10-04 | Who We Are is three value cards: Clarity, Impact, Trust -- the values already asserted in the footer, now with substance behind them. The old About paragraph is gone. | That paragraph was near-verbatim duplicated across all three Why Us cards ("No junior layers", "local networks rather than claim coverage", "until it works"). Replacing it removed the redundancy and gave the three sections distinct jobs: About = values, What We Do = services, Why Us = differentiators. |
+| 2026-10-04 | The explanatory copy under each value was written by Claude, not taken from the pitch deck. The three value NAMES are Akili's own. | Needs sign-off. No facts, numbers or capability claims were invented -- only the prose explaining values the firm already declared. |
 
 ## Open questions
 - [ ] Which partners are confirmed? The parked section holds Newgen and Cave Digital; the pitch also names Smart Governance as the governance platform.
