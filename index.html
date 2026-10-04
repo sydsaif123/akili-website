@@ -4,14 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Akili Advisory Group — Independent Technology Advisory for Africa</title>
-  <meta name="description" content="Africa-focused independent technology advisory firm serving boards and C-suites. We help organisations navigate complex technology decisions free from vendor bias.">
-  <link rel="icon" href="favicon.ico?v=2" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
-  <link rel="stylesheet" href="./style.css?v=2">
+  <meta name="description" content="Africa-focused technology advisory for boards and C-suites. Senior partners, start to finish. We stay responsible for outcomes, not just deliverables.">
+  <link rel="icon" href="favicon.ico?v=3" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=3">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=3">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=3">
+  <link rel="stylesheet" href="./style.css?v=26">
+  <noscript>
+    <style>
+      /* The preloader is torn down by script. Without JS it would cover the
+         site permanently, so hide it and un-hide what it masks. */
+      #preloader { display: none; }
+      body.preloading .nav-logo img { opacity: 1; }
+    </style>
+  </noscript>
 </head>
 <body class="preloading">
+
+  <div id="scroll-progress" aria-hidden="true"></div>
 
   <!-- Preloader -->
   <div id="preloader" aria-hidden="true">
@@ -30,7 +40,8 @@
       </a>
       <ul class="nav-links" id="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
+        <li><a href="#what-we-do">What We Do</a></li>
+        <li><a href="#services">How We Execute</a></li>
         <li><a href="#why-us">Why Us</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -45,56 +56,86 @@
   <!-- Hero -->
   <section class="hero" id="hero">
     <div class="container hero-content">
-      <h1>When technology decisions get complex, we bring clarity.</h1>
-      <p class="hero-sub">Independent advisory for boards and leadership teams navigating digital transformation, governance, and execution — without vendor bias.</p>
-      <a href="#contact" class="btn">Start a Conversation</a>
+      <p class="hero-eyebrow" data-reveal>Independent Technology Advisory</p>
+      <h1 data-reveal style="--reveal-delay:90ms">When technology decisions get complex, <em>we bring clarity.</em></h1>
+
+      <a href="#contact" class="btn btn-light" data-reveal style="--reveal-delay:270ms"><span>Start a conversation</span></a>
+
+      </div>
     </div>
   </section>
 
   <!-- About -->
   <section class="section" id="about">
     <div class="container">
-      <span class="section-label">About</span>
-      <h2 class="section-heading">Who We Are</h2>
+      <span class="section-label" data-reveal>About</span>
+      <h2 class="section-heading" data-reveal style="--reveal-delay:70ms">Who We Are</h2>
+      <p class="about-lead" data-reveal>Three commitments decide how every engagement runs.</p>
+
       <div class="about-grid">
-        <div class="about-text">
-          <p>We work with organisations at critical moments — when decisions carry weight, transformations stall, or clarity is missing. Our role is simple: to help you see clearly, decide confidently, and ensure what's planned actually works in practice.</p>
+        <div class="about-card" data-reveal style="--reveal-delay:0ms">
+          <h3>Clarity</h3>
+          <p>Complexity is not a credential. Our job is to make the decision legible to the people accountable for it &mdash; in their language, at their level, with the trade-offs named.</p>
         </div>
-        <div class="about-cards">
-          <div class="about-card">
-            <h4>20+ Years Combined Experience</h4>
-            <p>Deep expertise across banking, insurance, energy, and public sector technology.</p>
-          </div>
-          <div class="about-card">
-            <h4>Vendor Independent Always</h4>
-            <p>We do not sell technology. We protect your decisions from it.</p>
-          </div>
-          <div class="about-card">
-            <h4>Outcome Accountable Beyond Go-Live</h4>
-            <p>We stay responsible for results — not just deliverables.</p>
-          </div>
+        <div class="about-card" data-reveal style="--reveal-delay:90ms">
+          <h3>Impact</h3>
+          <p>A recommendation that changes nothing is an expense, not advice. We measure ourselves on what moved, not on what was delivered.</p>
+        </div>
+        <div class="about-card" data-reveal style="--reveal-delay:180ms">
+          <h3>Trust</h3>
+          <p>Earned by saying the inconvenient thing early. We tell you what we would do if it were our name on the outcome.</p>
+        </div>
+      </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Do -->
+  <section class="section whatwedo" id="what-we-do">
+    <div class="container">
+      <span class="section-label" data-reveal>Track Record</span>
+      <h2 class="section-heading" data-reveal style="--reveal-delay:70ms">What We Do</h2>
+      <div class="metric-grid">
+        <div class="metric-card" data-reveal style="--reveal-delay:0ms">
+          <p class="metric-figure">20<span class="metric-plus">+</span></p>
+          <h3>Leadership</h3>
+          <p>Twenty years at the level where the decision actually gets made — across banking, insurance, energy, public sector and health. Not years in the industry. Years in the chair.</p>
+        </div>
+        <div class="metric-card" data-reveal style="--reveal-delay:90ms">
+          <p class="metric-figure">&euro;1.5<span class="metric-unit">bn</span><span class="metric-plus">+</span></p>
+          <h3>Stewardship</h3>
+          <p>Capitalised software assets carried, not advised on from beside them. Portfolios this size are where good intentions meet real constraints.</p>
+        </div>
+        <div class="metric-card" data-reveal style="--reveal-delay:180ms">
+          <p class="metric-figure">1,200<span class="metric-plus">+</span></p>
+          <h3>Delivery</h3>
+          <p>Enterprise document templates built into live content and workflow systems, across core processes in regulated industries. Measured in what shipped and stayed running.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Services -->
+  <!-- How We Execute -->
   <section class="section services" id="services">
     <div class="container">
-      <span class="section-label">What We Do</span>
-      <h2 class="section-heading">Services</h2>
+      <span class="section-label" data-reveal>Method</span>
+      <h2 class="section-heading" data-reveal style="--reveal-delay:70ms">How We Execute</h2>
       <div class="services-grid">
-        <div class="service-card">
-          <h3>Advisory</h3>
-          <p>Independent guidance for boards and executives navigating technology, governance, and transformation decisions.</p>
+        <div class="service-card" data-reveal style="--reveal-delay:0ms">
+          <span class="service-index">01</span>
+          <h3>Discovery &amp; Due Diligence</h3>
+          <p>An honest read of what you actually have. No assumptions, no sales pitch — just an accurate picture of the estate before anyone proposes changing it.</p>
         </div>
-        <div class="service-card">
-          <h3>Strategy</h3>
-          <p>Clear roadmaps grounded in your reality — from where you are to where you need to be.</p>
+        <div class="service-card" data-reveal style="--reveal-delay:110ms">
+          <span class="service-index">02</span>
+          <h3>Gap Analysis</h3>
+          <p>ROI-grounded business cases that separate the real gaps from the noise, so investment goes where it changes the outcome.</p>
         </div>
-        <div class="service-card">
-          <h3>Implementation</h3>
-          <p>We stay close to ensure what was promised is delivered — and that it works.</p>
+        <div class="service-card" data-reveal style="--reveal-delay:220ms">
+          <span class="service-index">03</span>
+          <h3>Solution Recommendations</h3>
+          <p>Board-ready roadmaps that run from diagnosis straight through to delivery — and we stay on them until they work.</p>
         </div>
       </div>
     </div>
@@ -103,40 +144,39 @@
   <!-- Why Us -->
   <section class="section" id="why-us">
     <div class="container">
-      <span class="section-label">Why Akili</span>
-      <h2 class="section-heading">Why Us</h2>
+      <span class="section-label" data-reveal>Why Akili</span>
+      <h2 class="section-heading" data-reveal style="--reveal-delay:70ms">Why Us</h2>
       <div class="why-grid">
-        <div class="why-card">
-          <h3>Independent by Design</h3>
-          <p>We do not sell technology. We protect your decisions from it. No vendor bias. No hidden incentives. Just clear, accountable advice.</p>
+        <div class="why-card" data-reveal style="--reveal-delay:0ms">
+          <h3>Senior People, Start to Finish</h3>
+          <p>No junior layers. No playbook factories. A founding partner is personally on your engagement from first conversation to go-live. No sales agenda.</p>
         </div>
-        <div class="why-card">
-          <h3>Built for Leadership Decisions</h3>
-          <p>We turn complexity into clarity at board level — so decisions are understood, owned, and acted on.</p>
+        <div class="why-card" data-reveal style="--reveal-delay:90ms">
+          <h3>Accountable Past Go-Live</h3>
+          <p>We stay responsible for outcomes, not just deliverables. The engagement is not finished when the document is — it is finished when the thing works.</p>
         </div>
-        <div class="why-card">
-          <h3>From Strategy to Reality</h3>
-          <p>We do not stop at recommendations. We stay close until decisions translate into working solutions.</p>
-        </div>
-        <div class="why-card">
-          <h3>Africa, with Depth</h3>
-          <p>We understand the realities of operating across African markets — beyond theory, into execution.</p>
+        <div class="why-card" data-reveal style="--reveal-delay:180ms">
+          <h3>Africa, Without Overclaiming</h3>
+          <p>We partner with local networks rather than claim coverage we have not earned. Where we are deep, we say so. Where we are not, we bring someone who is.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Partners -->
+  <!-- Partnerships: hidden until the partner list is confirmed.
+       Inside a template element so it renders nowhere and is read by nothing.
+       To restore: delete the template open and close tags below. -->
+  <template id="partnerships-pending">
   <section class="section partners" id="partners">
     <div class="container">
-      <span class="section-label">Partnerships</span>
-      <h2 class="section-heading">Trusted Partnerships</h2>
+      <span class="section-label" data-reveal>Partnerships</span>
+      <h2 class="section-heading" data-reveal style="--reveal-delay:70ms">Trusted Partnerships</h2>
       <div class="partners-grid">
-        <div class="partner-card">
+        <div class="partner-card" data-reveal style="--reveal-delay:0ms">
           <h3>Newgen</h3>
           <p>Official Africa implementation partner for the NewgenONE platform — serving banking, insurance, government, and lending sectors with enterprise content management and process automation.</p>
         </div>
-        <div class="partner-card">
+        <div class="partner-card" data-reveal style="--reveal-delay:130ms">
           <h3>Cave Digital</h3>
           <p>Advisory partner for board and committee decision support. Together, we deliver governance-grade technology guidance to leadership teams across the continent.</p>
         </div>
@@ -144,17 +184,20 @@
     </div>
   </section>
 
+  </template>
+
   <!-- Contact -->
   <section class="section" id="contact">
     <div class="container">
-      <span class="section-label">Get in Touch</span>
-      <h2 class="section-heading">Contact</h2>
+      <span class="section-label" data-reveal>Get in Touch</span>
+      <h2 class="section-heading" data-reveal style="--reveal-delay:70ms">Contact</h2>
       <div class="contact-grid">
-        <div class="contact-text">
-          <p>If your transformation is losing momentum, your board needs clarity, or your technology decisions feel too complex to navigate — let us talk.</p>
+        <div class="contact-text" data-reveal>
+          <p class="contact-lead">When the decision is too important to get wrong, call Akili — not a sales rep.</p>
+          <p>If your transformation is losing momentum, your board needs clarity, or the next technology decision feels too complex to navigate, let us talk.</p>
           <p class="contact-email">Email: <a href="#" data-email></a></p>
         </div>
-        <div class="contact-form-wrap">
+        <div class="contact-form-wrap" data-reveal style="--reveal-delay:120ms">
           <form id="contact-form" action="https://formspree.io/f/mvzlvvyk" method="POST">
             <input type="hidden" name="_next" value="https://akiliag.com">
             <div class="honeypot" aria-hidden="true">
@@ -186,7 +229,7 @@
               <label for="message">Message</label>
               <textarea id="message" name="message" required></textarea>
             </div>
-            <button type="submit" class="btn btn-solid">Send Message</button>
+            <button type="submit" class="btn btn-solid"><span>Send message</span></button>
           </form>
         </div>
       </div>
@@ -203,6 +246,7 @@
           <span class="nav-logo-sub">Advisory Group</span>
         </span>
       </div>
+      <div class="footer-rule" aria-hidden="true"><span class="footer-mark"></span></div>
       <p class="footer-values">Clarity &middot; Impact &middot; Trust</p>
       <p class="footer-copy">&copy; 2025 Akili Advisory Group. All rights reserved.</p>
     </div>
@@ -215,6 +259,6 @@
     };
   </script>
   <script src="./config.js"></script>
-  <script src="./main.js?v=2"></script>
+  <script src="./main.js?v=6"></script>
 </body>
 </html>
