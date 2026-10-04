@@ -646,41 +646,6 @@ body.js-slides .slides.is-paused .slide-bar::after {
 }
 
 /* --- Hero proof: the slider inside the teal block --- */
-.hero-proof {
-  background: transparent;
-  border: none;
-  border-top: 1px solid rgba(201, 172, 115, 0.24);
-  border-radius: 0;
-  padding: 24px 0 0;
-  margin: 24px 0 30px;
-  max-width: 680px;
-}
-
-.hero-proof .slide {
-  flex-direction: row;
-  align-items: baseline;
-  gap: 22px;
-  max-width: none;
-}
-
-.hero-proof .slide-copy {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.hero-proof .slide p.slide-stat {
-  font-size: clamp(2.2rem, 4vw, 2.9rem);
-  color: var(--white);
-  margin-bottom: 0;
-  flex: none;
-  min-width: 4.4ch;
-}
-
-.hero-proof .slide p.slide-stat .slide-stat-plus {
-  color: var(--champagne);
-}
-
 .slide-title {
   font-family: var(--font-heading);
   font-size: var(--t-sub);
@@ -690,41 +655,82 @@ body.js-slides .slides.is-paused .slide-bar::after {
   letter-spacing: -0.005em;
 }
 
-.hero-proof .slide-copy p {
-  font-size: var(--t-small);
-  color: rgba(255, 255, 255, 0.58);
-  line-height: 1.6;
-  max-width: 52ch;
+/* --- What We Do: figure-led cards --- */
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
 }
 
-.hero-proof .slides-nav {
-  margin-top: 22px;
-  gap: 18px;
+.metric-card {
+  position: relative;
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  padding: 30px 28px 32px;
+  transition: background 0.4s var(--ease), transform 0.4s var(--ease), border-color 0.4s var(--ease);
 }
 
-.hero-proof .slide-bar {
-  background: rgba(255, 255, 255, 0.16);
-}
-
-.hero-proof .slide-bar::after {
+.metric-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
   background: var(--champagne);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform 0.5s var(--ease);
 }
 
-.hero-proof .slide-tag {
-  font-size: 0.625rem;
-  color: rgba(255, 255, 255, 0.45);
+.metric-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--champagne);
 }
 
-.hero-proof .slide-dot[aria-current="true"] .slide-tag {
-  color: var(--champagne);
+.metric-card:hover::before {
+  transform: scaleX(1);
 }
 
-.hero-proof .slide-dot:hover .slide-tag {
-  color: var(--white);
+.metric-card p.metric-figure {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 4.4vw, 3.1rem);
+  line-height: 1;
+  color: var(--teal);
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 14px;
+}
+
+.metric-unit {
+  font-size: 0.42em;
+  letter-spacing: 0;
+  padding-left: 0.06em;
+}
+
+.metric-plus {
+  font-size: 0.42em;
+  color: var(--bronze);
+  vertical-align: super;
+  padding-left: 0.04em;
+}
+
+.metric-card h3 {
+  font-size: var(--t-sub);
+  color: var(--teal);
+  margin-bottom: 8px;
+}
+
+.metric-card p {
+  font-size: var(--t-body);
+  color: var(--stone);
+  line-height: 1.75;
 }
 
 /* --- Services --- */
-.services {
+.whatwedo {
   background: var(--bone);
 }
 
@@ -915,11 +921,9 @@ body.js-slides .slides.is-paused .slide-bar::after {
 }
 
 /* --- Contact --- */
-/* Partnerships was the only dark band between Why Us and Contact. With it
-   hidden, those two sections were both white and ran together. Contact
-   takes the bone ground to keep the alternation. Revert this rule when
-   the Partnerships section comes back. */
-#contact.section {
+/* Grounds alternate: hero teal, About white, What We Do bone,
+   How We Execute white, Why Us bone, Contact white. */
+#why-us.section {
   background: var(--bone);
 }
 
@@ -1106,7 +1110,8 @@ body.js-reveal [data-reveal].revealed {
   }
 
   .why-grid,
-  .about-grid {
+  .about-grid,
+  .metric-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1169,28 +1174,6 @@ body.js-reveal [data-reveal].revealed {
 
   .nav-hamburger {
     display: block;
-  }
-
-  .hero-proof {
-    margin: 20px 0 28px;
-    padding-top: 22px;
-  }
-
-  .hero-proof .slide {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .hero-proof .slides-nav {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin-top: 22px;
-  }
-
-  .hero-proof .slide-tag {
-    font-size: 0.5rem;
-    letter-spacing: 0.1em;
   }
 
   .slides {

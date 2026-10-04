@@ -2,7 +2,7 @@
 
 ## Current status
 - Phase: Design and content refresh, on branch `design/restrained-palette`
-- Last action: Who We Are rebuilt as three value cards (Clarity / Impact / Trust)
+- Last action: Information architecture restructured into five sections
 - Next action: Push branch and open PR for team review
 
 ## Decisions made
@@ -27,6 +27,10 @@
 
 | 2026-10-04 | Who We Are is three value cards: Clarity, Impact, Trust -- the values already asserted in the footer, now with substance behind them. The old About paragraph is gone. | That paragraph was near-verbatim duplicated across all three Why Us cards ("No junior layers", "local networks rather than claim coverage", "until it works"). Replacing it removed the redundancy and gave the three sections distinct jobs: About = values, What We Do = services, Why Us = differentiators. |
 | 2026-10-04 | The explanatory copy under each value was written by Claude, not taken from the pitch deck. The three value NAMES are Akili's own. | Needs sign-off. No facts, numbers or capability claims were invented -- only the prose explaining values the firm already declared. |
+
+| 2026-10-04 | IA is: hero (headline + CTA only) / Who We Are (Clarity, Impact, Trust) / What We Do (the three figures as Leadership, Stewardship, Delivery) / How We Execute (01-03 Discovery, Gap Analysis, Solution Recommendations) / Why Us. | The numbered 01-03 process was mislabelled "What We Do" -- a numbered sequence is a method, so it is now How We Execute. The figures left the hero to become What We Do, which keeps the hero a clean single bar at 440px. |
+| 2026-10-04 | Grounds alternate deliberately: hero teal, About white, What We Do bone, How We Execute white, Why Us bone, Contact white. | Four card grids stack in a row; alternating grounds is what stops them reading as one repeated block. Changing any section's background breaks the rhythm. |
+| 2026-10-04 | The slider JS in main.js is generic ([data-slides]) and currently drives nothing -- no slider remains on the page. Left in place, not deleted. | It no-ops safely and the figures have already moved three times. Delete it if the IA settles. |
 
 ## Open questions
 - [ ] Which partners are confirmed? The parked section holds Newgen and Cave Digital; the pitch also names Smart Governance as the governance platform.
